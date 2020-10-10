@@ -1,0 +1,17 @@
+#baixando imagem
+docker pull tutum/mongodb
+
+#criando container sem senha
+docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no tutum/mongodb
+
+#criando container com senha
+docker run -d -p 27017:27017 -p 28017:28017 -e MONGODB_PASS="mypass" tutum/mongodb
+
+#subir o servidor
+docker ps -a
+
+#iniciar o container
+docker start 77b903780b83
+
+#para acessar o mongo client
+mongo
