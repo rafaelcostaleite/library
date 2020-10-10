@@ -15,3 +15,27 @@ docker start 77b903780b83
 
 #para acessar o mongo client
 mongo
+
+########
+
+sudo service docker status
+
+sudo docker pull mongo
+
+sudo mkdir -p /mongodata
+
+sudo docker run -it -v mongodata:/data/db --name mongodb -d mongo
+
+sudo docker ps
+
+sudo docker run -it -v mongodata:/data/db -p 27017:27017 --name mongodb -d mongo
+
+sudo docker logs mongodb
+
+sudo docker exec -it mongodb bash
+
+mongo -host localhost -port 27017  
+
+sudo docker stop mongodb
+
+sudo docker start mongodb
