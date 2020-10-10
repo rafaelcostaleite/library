@@ -1,0 +1,32 @@
+#Parar o serviço do Hadoop: 
+./stop-all.sh
+
+#Deletar novamente os arquivos temporários: 
+rm –rf /usr/local/hadoop/tmp/*
+
+#Ver se os arquivos e diretórios temporários foram realmente excluídos, usando o comando: 
+ls /usr/local/hadoop/tmp
+
+#Formatar novamente o HDFS: 
+/usr/local/hadoop/bin/hadoop namenode –format
+
+#Reiniciar os serviços do Hadoop: 
+/usr/local/hadoop/sbin/start-all.sh
+
+#Consultar novamente os serviços do Hadoop com o comando: DataNode, ResourceManager, NameNode, SecondaryNameNode, NodeManager 
+jps.
+
+#listando arquivos no hdfs
+/usr/local/hadoop/bin/hdfs dfs -ls /
+
+#criando diretórios hdfs
+/usr/local/hadoop/bin/hdfs dfs -mkdir /IGTI
+
+#criando arquivo no hdfs
+/usr/local/hadoop/bin/hdfs dfs -put /home/igti/Downloads/book.txt /IGTI/FBD
+
+#excluindo arquivos no hdfs
+/usr/local/hadoop/bin/hdfs dfs -rm /IGTI/FBD/book.txt
+
+#exemplo contador de palavras
+/usr/local/Hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.3.jar wordcount /IGTI/FBD/book.txt /IGTI/ResultadoWordCount/
