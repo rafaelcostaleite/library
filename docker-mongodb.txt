@@ -39,3 +39,6 @@ mongo -host localhost -port 27017
 sudo docker stop mongodb
 
 sudo docker start mongodb
+
+####
+docker run -p 27017:27017 -p 28017:28017 -e AUTH=no --name mongodb -d mongo
