@@ -42,3 +42,13 @@ sudo docker start mongodb
 
 ####
 docker run -p 27017:27017 -p 28017:28017 -e AUTH=no --name mongodb -d mongo
+docker run -v ~/mongodata:/data/db -p 27017:27017 -p 28017:28017 -e AUTH=no --name mongodb -d mongo:latest 
+
+####
+sudo systemctl stop docker
+sudo service docker stop
+
+sudo systemctl start docker
+sudo service docker start
+
+sudo systemctl status docker
